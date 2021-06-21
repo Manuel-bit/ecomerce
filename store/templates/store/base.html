@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -8,11 +9,11 @@
     <meta name="description" content="Jesco - Fashoin eCommerce HTML Template" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico" type="image/png">
+    <link rel="shortcut icon" href="/static/assets/images/favicon/favicon.ico" type="image/png">
 
-    <link rel="stylesheet" href="assets/css/vendor/vendor.min.css" />
-    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css" />
-    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/vendor/vendor.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/plugins/plugins.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.min.css' %}">
 
 </head>
 <body>
@@ -161,7 +162,7 @@
             <div class="offcanvas-overlay"></div>
 
             {% block content %}
-            
+
             {% endblock %}
 
             <div class="footer-area">
@@ -292,9 +293,9 @@
                 </div>
             </div>
 
-            <script src="assets/js/vendor/vendor.min.js"></script>
-            <script src="assets/js/plugins/plugins.min.js"></script>
-            <script src="assets/js/main.js"></script>
+            <script src="{% static 'assets/js/vendor/vendor.min.js' %}"></script>
+            <script src="{% static 'assets/js/plugins/plugins.min.js' %}"></script>
+            <script src="{% static 'assets/js/main.js' %}"></script>
     </header>
     
 </body>
