@@ -11,6 +11,7 @@ class Customer(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=250, null=True)
     price = models.FloatField()
+    image = models.ImageField(upload_to="productPics",null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -29,6 +30,7 @@ class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.SET_NULL, null=True)
     quantity = models.IntegerField(default=0, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
+
 
 class ShippingAddress(models.Model):
     Customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True)

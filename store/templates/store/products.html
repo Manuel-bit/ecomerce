@@ -1,5 +1,71 @@
 {% extends 'store/base.html' %}
 
 {% block content %}
+    <div class="product-area">
+        <div class="container">
+            <div class="row">
+                <!-- Section Title Start -->
+                <div class="col-lg col-md col-12">
+                    <div class="section-title mb-0">
+                        <h2 class="title"># Our products</h2>
+                    </div>
+                </div>
+                <!-- Section Title End -->
 
+                <!-- Tab Start -->
+                <div class="col-lg-auto col-md-auto col-12">
+                    <ul class="product-tab-nav nav">
+                        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"
+                                href="#tab-product-all">All</a></li>
+                    </ul>
+                </div>
+                <!-- Tab End -->
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="tab-content top-borber">
+                        <div class="tab-pane fade show active" id="tab-product-all">
+                            <div class="row">
+                                {% for item in products %}
+                                    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px" data-aos="fade-up"
+                                        data-aos-delay="200">
+                                        <!-- Single Prodect -->
+                                        <div class="product">
+                                            <div class="thumb">
+                                                <a href="single-product.html" class="image">
+                                                    <img src="/static/assets/images/product-image/1.jpg" alt="Product" />
+                                                    <img class="hover-image" src="/static/assets/images/product-image/2.jpg"
+                                                        alt="Product" />
+                                                </a>
+                                                <div class="actions">
+                                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
+                                                            class="pe-7s-like"></i></a>
+                                                </div>
+                                                <button title="Add To Cart" class=" add-to-cart">Add
+                                                    To Cart</button>
+                                            </div>
+                                            <div class="content">
+                                                <span class="ratings">
+                                                    <span class="rating-wrap">
+                                                        <span class="star" style="width: 100%"></span>
+                                                    </span>
+                                                    <span class="rating-num">( 5 Review )</span>
+                                                </span>
+                                                <h5 class="title"><a href="single-product.html">{{item.name}}
+                                                    </a>
+                                                </h5>
+                                                <span class="price">
+                                                    <span class="new">${{item.price|floatformat:2}}</span>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
