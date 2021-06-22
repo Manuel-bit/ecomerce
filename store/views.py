@@ -10,3 +10,6 @@ def Products(request):
         "title":title
     }
     return render(request, 'store/products.html', context)
+
+def Cart(request):
+    return render(request, 'store/cart.html')
