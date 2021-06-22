@@ -44,7 +44,7 @@
                         <!-- Header Action Start -->
                         <div class="col col-lg-auto align-self-center pl-0">
                             <div class="header-actions">
-                                <a href="login.html" class="header-action-btn login-btn" data-bs-toggle="modal"
+                                <a href="{% url 'customerRegister' %}" class="header-action-btn login-btn" data-bs-toggle="modal"
                                     data-bs-target="#loginActive">Sign In</a>
                                 <a href="#offcanvas-cart"
                                     class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
@@ -280,7 +280,6 @@
             </div>
         </div>
 
-        <script src="{% static 'assets/js/vendor/vendor.min.js' %}"></script>
         <script src="{% static 'assets/js/plugins/plugins.min.js' %}"></script>
         <script src="{% static 'assets/js/main.js' %}"></script>
     
