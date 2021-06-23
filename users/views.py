@@ -31,12 +31,9 @@ def Register(request):
 
 
 def LogIn(request):
-    if request.user.is_authenticated():
-        return redirect('products')
-
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
+        username = request.POST.get('user-name')
+        password = request.POST.get('user-password')
         user = auth.authenticate(username=username, password=password)
 
         if user is not None:
@@ -44,3 +41,7 @@ def LogIn(request):
             return redirect('products')
     
     return render(request, 'users/login.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('login')
